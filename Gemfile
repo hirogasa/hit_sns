@@ -13,7 +13,7 @@ group :test do
 	gem "launchy","~>2.3.0"
 	gem "selenium-webdriver","~>2.35.1"
 end
-
+gem 'bcrypt-ruby', '3.1.2'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.0.2'
 
