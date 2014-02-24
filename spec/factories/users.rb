@@ -3,10 +3,12 @@
 FactoryGirl.define do
   factory :user do
     user_id 1
-    name "MyString"
-    email "MyString"
+    name "John"
+    email "John@world.com"
     grade 1
     department "MyString"
     comment "MyString"
+		password "foobar"
+		password_confirmation "foobar"
   end
 end
