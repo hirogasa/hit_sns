@@ -4,6 +4,9 @@ describe User do
 	it "is valid with a name and email" do
 		expect(@user).to be_valid
 	end
+	it "should have remember_token" do
+		expect(@user).to respond_to(:remember_token)
+	end
 	it "is invalid without a name" do
 		@user.name = nil
 		expect(@user).to be_invalid
@@ -40,6 +43,12 @@ describe User do
 			@user = User.new(name:"Example User" , email: "user@ecample.com",password:"",password_confirmation:"")
 		end
 	it { should_not be_valid }
+	end
+	describe "remember token" do
+		before { @user.save } 
+		it "s remember_token should not be blank" do
+			expect(@user.remember_token).not_to be_blank
+		end
 	end
 end
 
