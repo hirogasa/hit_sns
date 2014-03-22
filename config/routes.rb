@@ -1,13 +1,14 @@
 HitSns::Application.routes.draw do
   match '/home',  to: 'static_pages#home', via: 'get'
   match '/help',  to: 'static_pages#help', via: 'get'
-  get "static_pages/help"
 	resources :users
 	resources :sessions, only: [:new, :create, :destroy]
+	#resources :courses
 	match '/signup',  to: 'users#new',        via: 'get'
 	match '/signin',  to: 'sessions#new',		  via: 'get'
 	match '/signout', to: 'sessions#destroy', via: 'delete'
 	root 'static_pages#home'
+	match '/search_course', to: 'users#search_course', via: 'get'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

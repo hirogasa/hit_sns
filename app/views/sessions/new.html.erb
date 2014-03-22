@@ -5,11 +5,11 @@
 	<div class = "span6 offset3">
 		<%= form_for(:session, url: sessions_path) do |f| %>
 			
-			<%= f.label :email %>
+			<%= f.label :email,class:'email_form' %>
 			<%= f.text_field :email %>
 
 			<%= f.label :password %>
-			<%= f.password_field :password %>
+			<%= f.password_field :password,class:'password_form' %>
 
 			<%= f.submit "Sign in", class:"btn btn-large btn-primary" %>
 		<% end %>

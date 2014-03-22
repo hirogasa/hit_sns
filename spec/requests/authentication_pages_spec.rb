@@ -58,6 +58,26 @@ describe "AuthenticationPages" do
 				end
 			end
 		end
+		context "with valid information" do
+			let(:user) { FactoryGril.create(:user) }
+			before { sign_in user}
+
+			it "should have title (user.name)" do
+				expect(page).to have_title(user.name) 
+			end
+			it "should have link to Profile" do
+				expect(page).to have_link('Profile', href:user_path(user)) 
+			end
+			it "should have link to Settings" do
+				expect(page).to have_link('Settings', href: edit_user_path(user)) 
+			end
+			it "should have link to Signout" do
+				expect(page).to have_link('Sign out', href: signout_path) 
+			end
+			it "should have link to Signin" do
+				expect(page).to have_link('Sign in', href: signin_path) 
+			end
+		end
   end
 end
 

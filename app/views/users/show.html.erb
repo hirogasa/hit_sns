@@ -5,3 +5,11 @@
 	<%= @user.grade%><% if @user.grade.nil? == false %> 年<% end %>
 	<%= @user.department%>
 	<%= @user.comment%>
+	<div class="span8">
+		<% if @user.courses.any? %>
+			<h3>Courses(<%= @user.courses.count %>)</h3>
+			<ol>
+				<%= render @courses %>
+			</ol>
+		<% end %>
+	</div>

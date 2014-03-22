@@ -1,4 +1,6 @@
 class User < ActiveRecord::Base
+	has_many :user_courses
+	has_many :courses ,:through => :user_courses
 	before_save { self.email = email.downcase }
 	before_create :create_remember_token
 
