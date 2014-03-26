@@ -1,0 +1,6 @@
+<% provide(:title, 'Search Course') %>
+<h1> Search courses </h1>
+<%= form_tag(:controller=>"courses",:action=>"search_result") do %>
+	<%= text_field_tag 'keyword' %>
+	<%= submit_tag "検索" %>
+<% end %>

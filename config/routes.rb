@@ -1,9 +1,11 @@
 HitSns::Application.routes.draw do
   match '/home',  to: 'static_pages#home', via: 'get'
   match '/help',  to: 'static_pages#help', via: 'get'
+	get 'courses/search'
+	post 'courses/search_result' => 'courses#search_result'
 	resources :users
 	resources :sessions, only: [:new, :create, :destroy]
-	#resources :courses
+	resources :courses
 	match '/signup',  to: 'users#new',        via: 'get'
 	match '/signin',  to: 'sessions#new',		  via: 'get'
 	match '/signout', to: 'sessions#destroy', via: 'delete'

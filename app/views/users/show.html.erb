@@ -6,10 +6,14 @@
 	<%= @user.department%>
 	<%= @user.comment%>
 	<div class="span8">
+		hogea
 		<% if @user.courses.any? %>
 			<h3>Courses(<%= @user.courses.count %>)</h3>
 			<ol>
 				<%= render @courses %>
 			</ol>
+		<% end %>
+		<% if current_user?(@user) %>
+			<%= link_to "授業の登録",courses_search_path %></li>
 		<% end %>
 	</div>
