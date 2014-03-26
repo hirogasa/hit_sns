@@ -3,6 +3,7 @@ HitSns::Application.routes.draw do
   match '/help',  to: 'static_pages#help', via: 'get'
 	get 'courses/search'
 	post 'courses/search_result' => 'courses#search_result'
+	post 'courses/register' => 'courses#register'
 	resources :users
 	resources :sessions, only: [:new, :create, :destroy]
 	resources :courses

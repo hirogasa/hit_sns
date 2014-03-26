@@ -7,9 +7,9 @@ class CoursesController < ApplicationController
 	def search_result
 		@keyword = params[:keyword]
 		if !@keyword.blank?
-      @courses = Course.where(["name LIKE ?", "%#{@keyword}%"]).
+      @courses = Course.where(["name LIKE ?", "%#{@keyword}%"])
     else
-      @courses = Course.order("created_at DESC").
+      @courses = Course.order("created_at DESC")
     end
 	end
 end

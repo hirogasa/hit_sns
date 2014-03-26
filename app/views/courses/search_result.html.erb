@@ -1,0 +1,10 @@
+
+<ul class = "courses">
+  <%= form_tag :controller=>"courses",:action=>"register"  %>
+		<% @courses.each do |course| %>
+			<%= check_box_tag :course_id, {:name => "grouping[course_id][]"},false %>
+			<%= label_tag :course_id, course.name+' | '+course.teacher + ' | ' +course.day, :value => course.id %>
+		<br>
+		<% end %>
+		<%= submit_tag "授業登録" %> 
+</ul>
