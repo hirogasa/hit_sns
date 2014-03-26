@@ -2,7 +2,7 @@
 <ul class = "courses">
   <%= form_tag :controller=>"courses",:action=>"register"  %>
 		<% @courses.each do |course| %>
-			<%= check_box_tag :course_id, {:name => "grouping[course_id][]"},false %>
+			<%= check_box_tag 'courses_id[]', course.id, false, {} %>
 			<%= label_tag :course_id, course.name+' | '+course.teacher + ' | ' +course.day, :value => course.id %>
 		<br>
 		<% end %>
